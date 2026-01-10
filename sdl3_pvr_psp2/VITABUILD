@@ -9,7 +9,7 @@ sha256sums=('082cbf5f429e0d80820f68dc2b507a94d4cc1b4e70817b119bbb8ec6a69584b8')
 build() {
   cd "SDL3-${pkgver}"
   mkdir -p build
-  cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=$VITASDK/share/vita.toolchain.cmake -DCMAKE_INSTALL_PREFIX=$prefix -DCMAKE_BUILD_TYPE=Release -DSDL_TEST_LIBRARY=OFF
+  cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=$VITASDK/share/vita.toolchain.cmake -DCMAKE_INSTALL_PREFIX=$prefix -DCMAKE_BUILD_TYPE=Release -DSDL_TEST_LIBRARY=OFF -DVIDEO_VITA_PVR=ON
   cmake --build build -j$(nproc)
 }
 
